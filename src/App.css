@@ -7,54 +7,130 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #eef2ff;
+  background: linear-gradient(135deg, #e0e7ff, #fce7f3);
+  min-height: 100vh;
   color: #1e293b;
 }
 
 .container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+  padding: 30px 0;
 }
 
-h1 {
-  color: #4338ca;
+.header {
+  text-align: center;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: white;
+  padding: 35px 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+.header h1 {
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
-.subtitle {
-  color: #64748b;
-  margin-bottom: 25px;
+.header p {
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+.section-title {
+  text-align: center;
+  margin: 35px 0 25px;
+  color: #4338ca;
+  font-size: 28px;
 }
 
 .student-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
 }
 
 .card {
-  background: white;
-  padding: 22px;
-  border-radius: 12px;
-  text-align: left;
-  box-shadow: 0 4px 12px #00000012;
-  border-left: 5px solid #6366f1;
-  transition: transform 0.2s;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e7ff;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.2);
+}
+
+.avatar {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .card h3 {
-  color: #4338ca;
-  margin-bottom: 15px;
+  color: #4f46e5;
+  font-size: 22px;
+  margin-bottom: 18px;
 }
 
 .card p {
-  margin: 10px 0;
+  text-align: left;
+  margin: 12px 0;
+  color: #475569;
   font-size: 14px;
   overflow-wrap: anywhere;
+}
+
+.card b {
+  color: #1e293b;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .student-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .student-list {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
 }
